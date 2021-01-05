@@ -114,17 +114,18 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-# EMAIL_HOST = 'smtp.google.com'
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = 
-# EMAIL_HOST_PASSWORD = 
-# EMAIL_USE_TLS = True
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.google.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = '2001stany@gmail.com'
+EMAIL_HOST_PASSWORD = 'mwanaume'
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
 REST_FRAMEWORK = {
     
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ]
 }
